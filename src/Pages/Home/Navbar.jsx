@@ -1,7 +1,9 @@
-
+import { Link } from "react-router-dom";
+import logo from '../../assets/Image/logo_dark.webp'
+import './navbar.css'
 const Navbar = () => {
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-[#408764] text-white font-medium">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -19,22 +21,16 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+   <img className="w-48" src={logo} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li tabIndex={0}>
-        <details>
-          <summary>Parent</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
+    <div className="menu menu-horizontal px-1 flex gap-8 text-xl">
+     <Link><p className="">Home</p></Link>
+     <Link><p className="">Colleges</p></Link>
+     <Link><p className=""> Admission</p></Link>
+     <Link><p className=""> My College</p></Link>
+       
+    </div>
   </div>
   <div className="navbar-end">
     <a className="btn">Button</a>
