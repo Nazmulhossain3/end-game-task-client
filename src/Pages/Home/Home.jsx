@@ -1,8 +1,10 @@
+import Collage from "./Collage";
 
 const Home = () => {
     return (
         <div>
-            <h2>this is home</h2>
+        <Collage></Collage>
+         
         </div>
     );
 };

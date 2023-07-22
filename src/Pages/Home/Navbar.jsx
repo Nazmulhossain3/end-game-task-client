@@ -21,14 +21,14 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-   <img className="w-48" src={logo} alt="" />
+   <img className="w-48  hidden lg:flex" src={logo} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <div className="menu menu-horizontal px-1 flex gap-8 text-xl">
-     <Link><p className="">Home</p></Link>
-     <Link><p className="">Colleges</p></Link>
-     <Link><p className=""> Admission</p></Link>
-     <Link><p className=""> My College</p></Link>
+     <Link to='/'><p className="">Home</p></Link>
+     <Link to='/colleges'><p className="">Colleges</p></Link>
+     <Link to='/admission'><p className=""> Admission</p></Link>
+     <Link to='/myCollage'><p className=""> My College</p></Link>
        
     </div>
   </div>
