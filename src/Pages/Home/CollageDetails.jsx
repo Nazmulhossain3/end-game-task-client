@@ -6,11 +6,11 @@ const CollageDetails = () => {
   
   console.log(details)
     return (
- <div className="hero min-h-screen bg-base-200 p-8 ">
+ <div className="hero min-h-screen bg-base-200 p-8 font-light ">
   <div className="hero-content flex-col lg:flex-row gap-10">
     <img src={collegeImage} className="max-w-sm rounded-lg shadow-2xl" />
     <div>
-      <h1 className="text-4xl font-bold">Name : {collegeName} </h1>
+      <h1 className="text-4xl">Name : {collegeName} </h1>
       <p className="mt-4 mb-3 font-light">Process :{admissionProcess}</p>
       <p className="">Research Work :</p>
         <div className="font-light">

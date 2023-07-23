@@ -4,7 +4,7 @@ import Piblication from "./Piblication";
 
 const Home = () => {
     return (
-        <div>
+        <div className="">
         <Collage></Collage>
         <Graduation></Graduation>
         <Piblication></Piblication>
