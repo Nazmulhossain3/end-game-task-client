@@ -7,6 +7,8 @@ const Piblication = () => {
    
     return (
  <div className='mt-12 px-12'>
+
+  <p className=' text-center text-3xl font-light my-12'>Our Students Publication</p>
     <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
 <div className="card  glass">

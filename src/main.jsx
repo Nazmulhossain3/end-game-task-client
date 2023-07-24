@@ -16,11 +16,15 @@ import CollageDetails from './Pages/Home/CollageDetails';
 import AllCollageDetails from './Pages/Collages/AllCollageDetails';
 import Login from './Component/Login/Login';
 import Register from './Component/Login/Register';
+import AuthProvider from './Component/Providers/AuthProvider';
+import AdmissionForm from './Pages/Admission/AdmissionForm';
+import ErrorPage from './Pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement : <ErrorPage></ErrorPage>,
     children : [{
       path : '/',
       element : <Home></Home>,
@@ -40,14 +44,14 @@ const router = createBrowserRouter([
   {
     path : '/collage/:id',
     element : <CollageDetails></CollageDetails>,
-    loader : ({params})=> fetch(`http://localhost:5000/collage/${params.id}`)
+    loader : ({params})=> fetch(`https://end-game-task-server-self.vercel.app/collage/${params.id}`)
     
     
   },
   {
     path : '/allCollage/:id',
     element : <AllCollageDetails></AllCollageDetails>,
-    loader : ({params}) => fetch(`http://localhost:5000/allCollage/${params.id}`)
+    loader : ({params}) => fetch(`https://end-game-task-server-self.vercel.app/allCollage/${params.id}`)
   },
   {
     path : '/login',
@@ -56,6 +60,10 @@ const router = createBrowserRouter([
   {
     path : '/register',
     element : <Register></Register>
+  },
+  {
+    path : '/admissionForm',
+    element : <AdmissionForm></AdmissionForm>
   }
 
 
@@ -67,6 +75,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-       <RouterProvider router={router} />
+     <AuthProvider>
+     <RouterProvider router={router} />
+     </AuthProvider>
   </React.StrictMode>,
 )

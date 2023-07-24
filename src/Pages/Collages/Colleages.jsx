@@ -6,7 +6,7 @@ const Colleages = () => {
     const [collages, setCollages] = useState([])
 
     useEffect(()=> {
-        fetch('http://localhost:5000/allCollage')
+        fetch('https://end-game-task-server-self.vercel.app/allCollage')
         .then(res => res.json())
         .then(data => {
             console.log(data)

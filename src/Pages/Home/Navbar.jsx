@@ -1,7 +1,18 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from '../../assets/Image/logo_dark.webp'
 import './navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../../Component/Providers/AuthProvider";
+import { FaSignOutAlt } from 'react-icons/fa';
 const Navbar = () => {
+    const {user,logOut} = useContext(AuthContext)
+    const navigate = useNavigate()
+   
+    const handleLogOut = ()=> {
+        logOut()
+        navigate('/login')
+    }
+   
     return (
         <div className="navbar bg-[#2B2F36]  text-white font-medium">
   <div className="navbar-start">
@@ -32,8 +43,18 @@ const Navbar = () => {
        
     </div>
   </div>
-  <div className="navbar-end">
-   <Link to='/login'><button className="border-2 px-3 rounded hover:bg-orange-600 py-1">Login</button></Link>
+  <div className="navbar-end mr-10">
+   
+ 
+ {
+    user ? <div className="flex item-center gap-4">
+        <p>{user.displayName}</p>
+        <FaSignOutAlt onClick={handleLogOut} className="mt-1"></FaSignOutAlt>
+    </div> : <Link to='/login'><button className="border-2 px-3 rounded hover:bg-orange-600 py-1">Login</button></Link>
+ }
+ 
+ 
+ 
   </div>
 </div>
     );
